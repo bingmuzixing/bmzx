@@ -13,7 +13,7 @@
         <module>bmzx-admin</module>
         <module>bmzx-core</module>
     </modules>
-    <description>木子管理子系统</description>
+    <description>冰木子星-管理子系统</description>
     <properties>
         <bmzx.version>1.0.0</bmzx.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
