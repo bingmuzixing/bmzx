@@ -12,28 +12,74 @@
     <modules>
         <module>bmzx-admin</module>
         <module>bmzx-core</module>
+        <module>bmzx-docAssistant</module>
     </modules>
-    <description>冰木子星-管理子系统</description>
+    <description>冰木子星</description>
     <properties>
         <bmzx.version>1.0.0</bmzx.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <thymeleaf.version>3.0.15.RELEASE</thymeleaf.version>
+        <fastjson.version>1.2.83</fastjson.version>
+        <log4j-api.version>2.10.0</log4j-api.version>
     </properties>
     <!-- 依赖声明 -->
     <dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
+        <dependencies>
+            <!-- SpringBoot的依赖配置-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.5.14</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- 阿里数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- thymeleaf模板引擎-->
+            <dependency>
+                <groupId>org.thymeleaf</groupId>
+                <artifactId>thymeleaf</artifactId>
+                <version>${thymeleaf.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+            <!-- 阿里JSON解析器 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- log4j 依赖-->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>$log4j-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>$log4j-api.version}</version>
+            </dependency>
+            <!-- 自己的框架- ========================================== -->
+            <!-- 基础框架-->
+            <dependency>
+                <groupId>com.bmzx</groupId>
+                <artifactId>bmzx-admin</artifactId>
+                <version>${bmzx.version}</version>
+            </dependency>
+            <!--核心类 -->
+            <dependency>
+                <groupId>com.bmzx</groupId>
+                <artifactId>bmzx-core</artifactId>
+                <version>${bmzx.version}</version>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <build>
